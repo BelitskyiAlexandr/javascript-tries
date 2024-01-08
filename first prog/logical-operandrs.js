@@ -84,3 +84,42 @@ let e2 = false;
 let f2 = false; 
 e2 ||= f2; 
 console.log(e2); // false
+
+
+// ? and ??
+const a3 = 1;
+const b3 = 2;
+const res = a < b ? a: b; // also can be res = a < b ? a + b: b - a;
+console.log(res) // 1 
+
+// ?? - check if null or undefined
+// The operator returns the value of the left operand if it is NOT null or undefined. 
+// Otherwise, the value of the right operand is returned.
+const result = "hello" ?? "world"; 
+console.log(result);    // hello 
+  
+console.log(0 ?? 5);    // 0 
+  
+console.log("" ?? "javascript");    // "" - empty string 
+  
+console.log(false ?? true); // false 
+  
+console.log(null ?? "not null");    // not null 
+  
+console.log(undefined ?? "defined");    // defined 
+  
+console.log(null ?? null);  // null 
+console.log(undefined ?? undefined);    // undefined
+
+// ??=
+// If the left operand is null and undefined, then it is assigned the value of the right operand. 
+// Otherwise, the left operand retains its value.
+const message1 = "Hello JavaScript"; 
+let text1 = "Hello work!" 
+text1 ??= message1; 
+console.log(text1);  // Hello work! 
+
+const message2 = "Hello JavaScript"; 
+let text2 = null; 
+text2 ??= message2; 
+console.log(text2);  // Hello JavaScript 
