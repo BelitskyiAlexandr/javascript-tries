@@ -107,3 +107,39 @@ function display(season, ...temps){
 }
 display("Spring", -2, -3, 4, 2, 5);
 display("Summer", 20, 23, 31);
+
+//Array as parameter
+function sum(numbers){
+    let result = 0;
+    for(const n of numbers)
+        result += n;
+    console.log("result =", result);
+}
+const nums = [6, 4, 5, 8];
+sum(nums)     // result = 23
+
+//Functions as parameters
+function sum(x, y){
+    return x + y;
+}
+ 
+function subtract(x, y){
+    return x - y;
+}
+ 
+//func - represents a function, and at the time of defining operation 
+//it doesn`t matter what kind of function it will be. 
+//The only thing that is known is that the func function can take two parameters 
+//and return a value
+
+function operation(x, y, func){
+  
+    const result = func(x, y);
+    console.log(result);
+}
+ 
+console.log("Sum");
+operation(10, 6, sum);  // 16
+ 
+console.log("Subtract");
+operation(10, 6, subtract); // 4
