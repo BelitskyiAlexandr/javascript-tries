@@ -56,13 +56,13 @@ console.log("b =", b); // Uncaught ReferenceError: b is not defined
 
 //
 var z = 89;
-function print(){
+function print1(){
  
     var z = 10;
     console.log(z); // 10 
                     // the variable z that is defined directly in the function will be used
 }
-print(); // 10
+print1(); // 10
 
 //the specific behavior when hiding a variable depends on how the variable is defined
 //---var---
