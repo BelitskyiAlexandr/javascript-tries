@@ -83,7 +83,7 @@ tom.print();    // Name: Tom  Age: 39
                 // Company: Google
 
 
-//Problems with prototypic inheritance
+//  --- Problems with prototypic inheritance ---
 //Employee type takes over not only all the current properties and methods from the Person prototype,
 //but also those that will be subsequently added dynamically. For example:
 Person.prototype.sleep = function() {console.log(`${this.name} sleeps`);}
