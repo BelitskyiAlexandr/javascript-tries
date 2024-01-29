@@ -24,6 +24,11 @@ function Employee(name, age, comp){
     this.work = function(){
         console.log(`${this.name} works in ${this.company}`);
     };
+
+    // override the sayHello method
+    this.sayHello = function(){
+        console.log(`Employee ${this.name} says "Hello"`);
+    };
 }
 // inherit the prototype from Person
 // it is also necessary to inherit the Person prototype, 
@@ -54,3 +59,44 @@ tom.sayHello(); // Person Tom says "Hello"
 tom.print(); // Name: Tom Age: 39
 // call to own method
 tom.work(); // Tom works in Google
+
+
+//overriding
+//sayHello (in the constructor) and print() (in the prototype)
+//override the print method
+Employee.prototype.print = function(){
+    console.log(`Name: ${this.name} Age: ${this.age} Company: ${this.company}`);
+};
+tom.sayHello();    // Employee Tom says "Hello"         --override on line 28 
+tom.print();    // Name: Tom  Age: 39  Company: Google
+
+//Calling a parent prototype method
+//In a descendant prototype, you may need to call a method from a parent prototype
+//this may be necessary to shorten the code logic if the logic of the descendant method 
+//repeats the logic of the parent method
+// override the print method
+Employee.prototype.print = function(){
+    Person.prototype.print.call(this); // call the print method from Person
+    console.log(`Company: ${this.company}`);
+};
+tom.print();    // Name: Tom  Age: 39  
+                // Company: Google
+
+
+//Problems with prototypic inheritance
+//Employee type takes over not only all the current properties and methods from the Person prototype,
+//but also those that will be subsequently added dynamically. For example:
+Person.prototype.sleep = function() {console.log(`${this.name} sleeps`);}
+tom.sleep();    // Tom sleeps
+//Here the sleep method is added to the Person prototype. 
+//Moreover, it is added after the creation of the tom object, which represents the Employee type. 
+//However, even on this object we can call the sleep method.
+
+
+//  !!!     through the prototype of the successor constructor, 
+//  !!!     you can change the prototype of the parent constructor
+// change the print method in the base Person prototype
+Employee.prototype.__proto__.print = function(){ console.log("Person prototype hacked");};
+// create a Person object
+const bob = new Person("Bob", 43);
+bob.print(); //Person prototype hacked
