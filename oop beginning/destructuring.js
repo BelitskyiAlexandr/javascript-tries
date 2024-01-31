@@ -112,3 +112,39 @@ for(let {name: username, age: userage} of people){
 // Name: Tom Age: 34
 // Name: Bob Age: 23
 // Name: Sam Age: 32
+
+// ---Destructuring parameters---
+//If an array or object is passed to a function as a parameter, 
+//then it can also be decomposed into individual values
+function display({name:userName, age:userAge}){
+    console.log(userName, userAge);
+}
+function sum([a, b, c]){
+    const result = a + b + c;
+    console.log(result);
+}
+const user5 = {name:"Alice", age:33, email: "alice@gmail.com"};
+
+const numbers = [3, 5, 7, 8];
+
+display(user5); // Alice 33
+sum(numbers); // 15
+
+
+// ---Exchange of values
+
+let firstt = "Tom";
+let secondd = "Bob";
+[firstt, secondd] = [secondd, firstt];
+  
+console.log(firstt); //Bob
+console.log(secondd); //Tom
+
+//This simplifies solving a number of problems. 
+//For example, we use destructuring for the simplest sorting of an array:
+let nums = [9, 3, 5, 2, 1, 4, 8, 6];
+for(let i = 0; i < nums.length; i++)
+     for(let j = 0; j < nums.length; j++)
+         if (nums[i] < nums[j]) [nums[j], nums[i]] = [nums[i], nums[j]];
+         
+console.log(nums); // [1, 2, 3, 4, 5, 6, 8, 9]
