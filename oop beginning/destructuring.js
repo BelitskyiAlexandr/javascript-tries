@@ -76,3 +76,19 @@ console.log(a2);     // Tom
 console.log(b2);     // Sam
 console.log(c2);     // Bob
 console.log(d2);     // undefined
+
+//rest operator
+const users1 = ["Tom", "Sam", "Bob", "Mike"];
+const [tom1, ...others] = users1;
+console.log(tom1);       // Tom
+console.log(others);    // ["Sam", "Bob", "Mike"]
+
+//we can skip a number of array elements, leaving blanks instead of variable names:
+const users2 = ["Tom", "Sam", "Bob", "Ann", "Alice", "Kate"];
+const [first,,,,fifth] = users2;
+console.log(first);         //Tom
+console.log(fifth);         //Alice
+
+const [,second,,forth] = users2;
+console.log(second);        //Sam
+console.log(forth);         //Ann
