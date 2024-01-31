@@ -55,3 +55,24 @@ const {name3, age, ...contacts} = tom;
 console.log(name3);      // Tom
 console.log(age);       // 24
 console.log(contacts);  // {phone: "+367438787", email: "tom@gmail.com"}    contacts - obj
+
+// ---Destructuring Arrays---
+const users = ["Tom", "Sam", "Bob"];
+const [a, b, c] = users;
+console.log(a);     // Tom
+console.log(b);     // Sam
+console.log(c);     // Bob
+
+//If there are fewer variables/constants, then the remaining array elements are simply omitted.
+const [a1, b1] = users;
+  
+console.log(a1); //Tom
+console.log(b1); //Sam
+
+//If there are more variables/constants, then extra vars/consts are undefined
+const [a2, b2, c2, d2] = users;
+  
+console.log(a2);     // Tom
+console.log(b2);     // Sam
+console.log(c2);     // Bob
+console.log(d2);     // undefined
