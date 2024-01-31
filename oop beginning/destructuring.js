@@ -92,3 +92,23 @@ console.log(fifth);         //Alice
 const [,second,,forth] = users2;
 console.log(second);        //Sam
 console.log(forth);         //Ann
+
+
+//getting data from array and object
+const people = [
+     {name: "Tom", age: 34},
+     {name: "Bob", age: 23},
+     {name: "Sam", age: 32}
+];
+const [,{name5}] = people;
+//we get the value of the name property of the second object in the array
+console.log(name5); //Bob
+
+//destructuring of objects when iterating over an array of objects
+for(let {name: username, age: userage} of people){
+    console.log(`Name: ${username} Age: ${userage}`);
+}
+// console output
+// Name: Tom Age: 34
+// Name: Bob Age: 23
+// Name: Sam Age: 32
