@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="1.png" alt="Pic 1" />
+    <img src="2.png" alt="Pic 2" />
+    <img src="3.png" alt="Pic 3" />
+    <script>
+        const images = document.images;
+        // change first pic
+        images[0].src = "4.png";
+        images[0].alt = "Pic 4";
+        
+        for (img of images) {
+            console.log(`Url: "${img.src}" Alt:"${img.alt}"`);
+        }
+    </script>
+</body>
+
+</html>

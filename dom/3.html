@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+</head>
+<body>
+    <a href="article1.html">art 1</a>
+    <a href="article2.html">art 2</a>
+    <a href="article3.html">art 3</a>
+    <script>
+        const links = document.links;
+        
+        for(link of links){
+            console.log(`Href: "${link.href}" Text: "${link.innerText}"`);
+        }
+    </script>
+</body>
+</html>
