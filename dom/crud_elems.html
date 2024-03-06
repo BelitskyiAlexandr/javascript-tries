@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //create elems
+        const header = document.createElement("h1");        // create <h1>
+        console.log(header);  // <h1></h1>
+
+        const headerText = document.createTextNode("Hello World"); // create text node
+        console.log(headerText);  // "Hello World"
+
+        //!!! not to create text node
+        // const header = document.createElement("h1"); // create header <h1>
+        // header.textContent = "Hello World"; // define the text of the element
+
+        //add elems
+        header.appendChild(headerText); // add a text node to the h1 element
+        // console.log(header); // <h1>Hello World</h1>
+        // document.body.appendChild(header); // add an h1 element to the page in the body element
+    </script>
+
+    <p>Text 1</p>
+    <p>Text 2</p>
+    <script>    //insertBefore
+        // get the first paragraph
+        const firstP = document.body.firstElementChild;
+        // add an h1 element before the firstP paragraph
+        document.body.insertBefore(header, firstP);
+
+        //  !!!     insert into certain place
+        // If we need to insert a new node at the second, third or any other place, then we need to
+        // find the node before which we need to insert using a combination of
+        // the firstElementChild/lastElementChild and nextSibling/previousSibling properties.
+    </script>
+
+
+    <!--    Copying an element  -->
+    <div id="article">
+        <h1>Home Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const article = document.getElementById("article");
+        // get the last paragraph
+        const lastP = article.lastElementChild;
+        // clone lastP element
+        const newLastP = lastP.cloneNode(true);
+        // change the text
+        newLastP.textContent = "Publication Date: 10/28/2023";
+        // add article to the end of the element
+        article.appendChild(newLastP);
+
+        /// cloneNode()
+        // cloneNode() passes a boolean value as a parameter: if true is passed,
+        // the element will be copied with all child nodes;
+        // if false is passed, then it is copied without child nodes.
+    </script>
+
+    <!--    Replacement of element  -->
+    <div id="page">
+        <h1>Home Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const page = document.getElementById("page");
+        const oldNode = page.firstElementChild;
+        // create a new element
+        const newNode = document.createElement("h2");
+        // define text for it
+        newNode.textContent = "New h2";
+        // replace the old node with a new one
+        page.replaceChild(newNode, oldNode);
+    </script>
+
+    <!--    Deleting an element -->
+    <div id="delnote">
+        <h1>Del Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const delnote = document.getElementById("delnote");
+        // find the node that we will delete - last paragraph
+        const lastPar = delnote.lastElementChild;
+        // delete the node
+        delnote.removeChild(lastPar);
+
+        // delete everything
+        while (delnote.firstChild) {
+            delnote.removeChild(delnote.firstChild);
+        }
+    </script>
+</body>
+
+</html>
