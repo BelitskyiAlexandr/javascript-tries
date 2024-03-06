@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+<a>: HTMLAnchorElement type
+<abbr>: HTMLElement type
+<address>: HTMLElement type
+<area>: HTMLAreaElement type
+<audio>: HTMLAudioElement type
+
+<b>: HTMLElement type
+<base>: HTMLBaseElement type
+<bdo>: HTMLElement type
+<blockquote>: HTMLQuoteElement type
+<body>: HTMLBodyElement type
+<br>: HTMLBRElement type
+<button>: HTMLButtonElement type
+
+<caption>: HTMLTableCaptionElement type
+<canvas>: HTMLCanvasElement type
+<cite>: HTMLElement type
+<code>: HTMLElement type
+<col>, <colgroup>: HTMLTableColElement type
+
+<data>: HTMLDataElement type
+<datalist>: HTMLDataListElement type
+<dd>: HTMLElement type
+<del>: HTMLModElement type
+<dfn>: HTMLElement type
+<div>: HTMLDivElement type
+<dl>: HTMLDListElement type
+<dt>: HTMLElement type
+
+<em>: HTMLElement type
+<embed>: HTMLEmbedElement type
+
+<fieldset>: HTMLFieldSetElement type
+<form>: HTMLFormElement type
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>: HTMLHeadingElement type
+<head>: HTMLHeadElement type
+<hr>: HTMLHRElement type
+<html>: HTMLHtmlElement type
+
+<i>: HTMLElement type
+<iframe>: HTMLIFrameElement type
+<img>: HTMLImageElement type
+<input>: HTMLInputElement type
+<ins>: HTMLModElement type
+
+<kbd>: HTMLElement type
+<keygen>: HTMLKeygenElement type
+
+<label>: HTMLLabelElement type
+<legend>: HTMLLegendElement type
+<li>: HTMLLIElement type
+<link>: HTMLLinkElement type
+
+<map>: HTMLMapElement type
+<media>: HTMLMediaElement type
+<meta>: HTMLMetaElement type
+<meter>: HTMLMeterElement type
+
+<noscript>: HTMLElement type
+
+<object>: HTMLObjectElement type
+<ol>: HTMLOListElement type
+<optgroup>: HTMLOptGroupElement type
+<option>: HTMLOptionElement type
+<output>: HTMLOutputElement type
+
+<p>: HTMLParagraphElement type
+<param>: HTMLParamElement type
+<pre>: HTMLPreElement type
+<progress>: HTMLProgressElement type
+
+<q>: HTMLQuoteElement type
+
+<s>: HTMLElement type
+<samp>: HTMLElement type
+<script>: HTMLScriptElement type
+<select>: HTMLSelectElement type
+<small>: HTMLElement type
+<source>: HTMLSourceElement type
+<span>: HTMLSpanElement type
+<strong>: HTMLElement type
+<style>: HTMLStyleElement type
+<sub>: HTMLElement type
+<sup>: HTMLElement type
+
+<table>: HTMLTableElement type
+<tbody>: HTMLTableSectionElement type
+<td>: HTMLTableCellElement type
+<textarea>: HTMLTextAreaElement type
+<tfoot>: HTMLTableSectionElement type
+<th>: HTMLTableHeaderCellElement type
+<thead>: HTMLTableSectionElement type
+<time>: HTMLTimeElement type
+<title>: HTMLTitleElement type
+<tr>: HTMLTableRowElement type
+<track>: HTMLTrackElement type
+
+<ul>: HTMLUListElement type
+
+<var>: type HTMLElement / HTMLUnknownElement
+<video>: HTMLVideoElement type
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+        const header = document.getElementById("header");
+        console.log(Object.getPrototypeOf(header)); // HTMLHeadingElement
+    </script>
+
+    <script>
+        // tagName: returns the element's tag
+        // textContent: represents the element's text content
+        // innerText: represents the element's text co  ntent (same as textContent)
+        // innerHTML: represents the element's html code
+        console.log(header.tagName);  // H1
+        console.log(header.textContent);
+        header.textContent = "Hello World";
+        console.log(header.innerText);
+        header.innerText = "Hello World2";
+    </script>
+
+    <script>
+        console.log(header.innerHTML); // Home Page
+        // change the element's html code
+        header.innerHTML = "<span style='color:navy;'>Hello World2</span>";
+    </script>
+</body>
+
+</html>
