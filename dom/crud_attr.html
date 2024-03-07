@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="home" class="link" style="color:red;" href="index.html">Home</a>
+    <script>
+        // getAttribute(attr): returns the value of the attr attribute
+        // createAttribute(attr): creates an attr attribute
+        // setAttribute(attr, value): Sets the attr attribute to value.If the attribute does not exist, then it is added
+        // removeAttribute(attr): removes the attr attribute and its value
+
+        const element = document.getElementById("home");
+        // get element attributes
+        console.log(element.getAttribute("id")); // home
+        console.log(element.getAttribute("class")); // link
+        console.log(element.getAttribute("href")); //index.html
+        //  or
+        console.log(element.id);    // home
+        console.log(element.className); // link
+        console.log(element.href);  //  file:///D:/.../javascript-tries/dom/index.html
+
+        console.log(element.style);    // CSSStyleDeclaration   -   using the properties you can obtain individual aspects
+        console.log(element.getAttribute("style")); // color:red;
+    </script>
+
+    <a id="setAttr" href="index.html">Home</a>
+    <script>
+        // get the element
+        const setAttr = document.getElementById("setAttr");
+        // set the href attribute
+        setAttr.setAttribute("href", "newIndex.html");
+        // set the style attribute
+        setAttr.setAttribute("style", "color:green;");
+
+        console.log(setAttr.getAttribute("href"));
+        console.log(setAttr.getAttribute("style"));
+    </script>
+
+    <a id="delAttr" href="https://metanit.com" style="color:rgb(128, 0, 49);">Home</a>
+    <script>
+        // get the element
+        const delAttr = document.getElementById("delAttr");
+        // remove the style attribute
+        delAttr.removeAttribute("style");
+        console.log(delAttr.getAttribute("style")); // null
+    </script>
+</body>
+
+</html>
