@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+        // CSSStyleDeclaration -> element.style.CSSproperty
+        const header = document.getElementById("header");
+        // get the value of the color property
+        console.log(header.style.color); // empty line
+        // change the value of the color property
+        header.style.color = "navy";
+        // get the value of the color property again
+        console.log(header.style.color); //navy
+        header.style.fontFamily = "Verdana"; // if prop with -, then next letter is Upper
+        // font-family -> fontFamily
+        console.log(header.style.fontFamily);
+    </script>
+
+    <h1 id="footer" class="footer-font">Home Page</h1>
+    <style>
+        .footer-color {
+            color: rgb(128, 0, 100);
+        }
+
+        .footer-font {
+            font-family: Verdana;
+        }
+
+        .footer-size {
+            font-size: 32px;
+        }
+    </style>
+    <script>
+        const footer = document.getElementById("footer");
+        // get the current class
+        console.log(footer.className); // footer-font
+        // set the element class
+        footer.className = "footer-color";
+        // get the current class
+        console.log(footer.className); // footer-color
+
+        // the previous value of the class attribute is removed. 
+        // if we need to add a class, we need to combine its name with the old class:
+        footer.className = footer.className + " footer-color";
+        console.log(footer.className); // footer-color footer-color
+        // if you need to completely remove all classes:
+        footer.className = "";
+        console.log(footer.className); // empty line
+
+        // classList
+        // add(className): adds a class className
+        // remove(className): removes the class className
+        // toggle(className): Toggles the element's class to className. 
+        // If there is no class, then it is added
+        footer.classList.remove("footer-size"); // remove the footer-size class
+        footer.classList.add("footer-font"); // add the footer-font class
+        footer.classList.toggle("footer-color"); // switch the footer-color class
+
+        // condition to toggle
+        const i = 5;
+        const condition = i > 0; // condition
+        footer.classList.toggle("footer-color", condition); // switch the footer-color class according to condition
+
+        // iterate through the list of classes
+        for (footerClass of footer.classList) {
+            console.log(footerClass);
+        }
+        console.log(footer.classList[0]); // first installed class
+
+    </script>
+</body>
+
+</html>
