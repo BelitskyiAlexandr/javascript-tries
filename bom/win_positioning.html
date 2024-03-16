@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="openWindow()">Microsoft</button>
+    <button onclick="openWiki()">Wiki</button>
+    <script>
+        function openWindow() {
+            window.open("https://microsoft.com", "_blank", "popup=yes");
+        }
+        /*
+        open();
+        open(url);
+        open(url, target);
+        open(url, target, windowFeatures);
+       
+        target:
+            _self:  page opens in the current tab
+            _blank: page opens in a new tab or separate window
+        
+        windowFeatures -> name=value:
+            popup:                  Specifies whether the page will open in a separate popup window.   
+                                        Values: yes, 1, true
+        
+            width / innerWidth:     The width of the window in pixels. 
+                                        For example, width=640
+            height / innerHeight:   The height of the window in pixels. 
+                                        For example, height=480
+            
+            left/screenX:           X coordinate relative to the origin of the screen in pixels. 
+                                        For example, left=0
+            top/screenY:            Y coordinate relative to the start of the screen in pixels. 
+                                        For example, top=0
+
+            location:               Specifies whether the address bar will be displayed. 
+                                        For example, location=yes
+
+            menubar:                Specifies whether the menu bar will be displayed. 
+                                        For example, menubar=yes
+
+            scrollbars:             Specifies whether the window will have scroll bars. 
+                                        For example, scrollbars=yes
+
+            status:                 Specifies whether the status bar will be displayed. 
+                                        For example, status=yes
+
+            toolbar:                Specifies whether the toolbar will be displayed. 
+                                        For example, toolbar=yes
+        
+            The last five parameters can take yes and no as values, 
+            instead of which can be also used 1 and 0
+        
+        */
+        function openWiki() {
+            window.open("https://www.wikipedia.org/", "_blank", "width=600,height=400,left=500,top=200");
+        }
+    </script>
+
+    <button onclick="openNewWindow()">Open</button>
+    <button onclick="closeNewWindow()">Close</button>
+    <script>
+        let newWindow = null;
+
+        function openNewWindow() {
+            if (!newWindow || newWindow.closed) { // if the window is not open
+                newWindow = window.open("https://www.youtube.com", "_blank", "width=600,height=400,left=500,top=200,popup=yes");
+            }
+        }
+        function closeNewWindow() {
+            newWindow?.close(); // if the window is open, close it
+            newWindow = null;
+        }
+    </script>
+
+    <!--
+Controlling window position and size
+To control/change the position and size of a window, the window object provides a number of methods:
+
+moveBy():   Moves the current browser window horizontally and vertically by the specified number of pixels. 
+            The first parameter determines the horizontal movement, the second parameter determines the vertical movement in pixels.
+moveTo():   Moves the current browser window horizontally and vertically to the specified position. 
+            The first parameter determines the horizontal position, the second parameter determines the vertical position in pixels.
+
+resizeBy(): Scales the current browser window horizontally and vertically by the specified number of pixels. 
+            The first parameter determines the horizontal scaling value, the second parameter determines the vertical scaling value.
+resizeTo(): Scales the current browser window horizontally and vertically to the specified size. 
+            The first parameter determines the width, the second parameter determines the height.
+
+scroll():   Scrolls the contents of the window to the specified position. 
+            The first parameter specifies the horizontal position, the second parameter specifies the vertical position.
+
+scrollBy(): Scrolls the contents of the window by the specified factor. 
+            The first parameter determines the horizontal scroll factor, the second parameter determines the vertical scroll factor.
+scrollTo(): Scrolls the contents of the window to the specified position. 
+            The first parameter specifies the horizontal position, the second parameter specifies the vertical position.
+
+    -->
+    <button onclick="openAnotherWindow()">Open</button>
+    <button onclick="moveAnotherWindow()">Move</button>
+    <script>
+        let testWindow = null;
+
+        // open a window
+        function openAnotherWindow() {
+            testWindow = window.open("https://www.google.com", "_blank", "width=600,height=400,left=200,top=200");
+        }
+        // move
+        function moveAnotherWindow() {
+            testWindow.moveTo(500, 400);
+        }
+    </script>
+
+</body>
+
+</html>
