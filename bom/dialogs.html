@@ -1,0 +1,83 @@
+<!-- 
+window:
+    alert():    displays a message box
+    confirm():  displays a message box asking the user to confirm
+                    the action of the two buttons OK and Cancel
+    prompt():   allows you to use a dialog box to prompt
+                    the user for some information
+    print():    displays a dialog box for printing the page
+    find():     allows you to find specific text on a page
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">Click</button>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            alert("Hello world");   // alert by clicking on the btn
+        });
+    </script>
+
+    <button id="btn-confirm">Confirm</button>
+    <script>
+        const btnConfirm = document.getElementById("btn-confirm");
+        btnConfirm.addEventListener("click", () => {
+            const result = confirm("End executing the program?");
+            if (result === true)
+                console.log("The program is ended");
+            else
+                console.log("The program is working");
+        });
+    </script>
+
+    <button id="btn-prompt">Prompt</button>
+    <script>
+        const btnPrompt = document.getElementById("btn-prompt");
+        btnPrompt.addEventListener("click", () => {
+            const name = prompt("Enter your name:");
+            console.log("Your name: ", name)
+        });
+    </script>
+
+    <input id="key" name="key" />
+    <button id="btn-find">Find</button>
+    <div>
+        <p>—Oh, it’s my fault, Pyotr Nikolaich! “I’ll be quiet,” the secretary said and continued in a half-whisper:
+            “Well, and you also need to eat skillfully, my soul Grigory Savvich.” You need to know what to eat. The best
+            appetizer, if you want to know, is herring. If you ate a piece of it with onions and mustard sauce, now, my
+            benefactor, while you still feel the sparks in your stomach, eat the caviar on its own or, if you wish, with
+            a lemon, then a simple radish with salt, then again herring, but best of all , benefactor, salted saffron
+            milk caps, if you cut them finely, like caviar, and, you know, with onions, with Provençal butter...
+            delicious! But burbot liver is a tragedy!</p>
+        <p> “Hmm, yes...” agreed the honorary peace officer, squinting his eyes. — Also good for appetizers... sultry
+            porcini mushrooms...</p>
+    </div>
+    <script>
+        const btnFind = document.getElementById("btn-find");
+        const keyField = document.getElementById("key");
+        btnFind.addEventListener("click", () => {
+
+            const result = find(keyField.value); // look for the word entered in the field
+            console.log(result);
+        });
+    </script>
+
+    <button id="btn-print">Print</button>
+    <script>
+        const btnPrint = document.getElementById("btn-print");
+        btnPrint.addEventListener("click", () => {
+            print(); // print the current page
+        });
+    </script>
+</body>
+
+</html>
