@@ -17,6 +17,15 @@
             "matches": [
                 "https://gazeta.ua/*"
             ]
+        },
+
+        {
+            "js": [
+                "scripts/slovoidilo.js"
+            ],
+            "matches": [
+                "https://www.slovoidilo.ua/*"
+            ]
         }
     ]
 }
