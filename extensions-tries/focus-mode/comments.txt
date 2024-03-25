@@ -1,0 +1,25 @@
+The first event our serviceworker will listen for is runtime.onInstalled() . 
+This method allows the extension to set the initial state or perform some tasks during installation. 
+Extensions can use the Storage API and IndexedDB to store application state. 
+However, in this case, since we are only handling two states, we will use the action icon text itself, 
+to keep track of whether the extension is on or off.
+
+----
+The activeTab permission gives the extension the temporary ability to execute code on the active tab. 
+It also provides access to sensitive properties of the current tab.
+
+This permission is enabled when the user invokes the extension. 
+In this case, the user invokes the extension by clicking the extension action.
+
+What other user actions activate the activeTab permission in my own extension?
+Pressing a keyboard shortcut.
+Selecting a context menu item.
+Accepting a suggestion from the omnibox.
+Opening the extension's popup window.
+
+The "activeTab" permission allows users to purposefully choose to launch the extension on the selected tab; 
+thus, it protects the user's privacy. Another advantage is that it does not trigger the permission warning .
+----
+https://developer.chrome.com/docs/extensions/reference/api/scripting
+You can use scripting.executeScript() to inject JavaScript
+----
